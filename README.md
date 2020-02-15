@@ -1,5 +1,8 @@
 ### WaniKani wallpaper generator
+
 Generate wallpeaper filled with colorfull kanji signs, based on your progress on [WaniKani](https://www.wanikani.com/) platform!
+
+![Example](/examples/big.jpg "Example of generated wallpaper")
 
 ##### Requirements
 
