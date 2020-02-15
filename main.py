@@ -90,6 +90,12 @@ def api_get_assignments_data(api_key):
     return assignment_dict_by_kanji
 
 
+def shuffle_kanji_order(all_kanji_str) -> str:
+    temp = [chr for chr in all_kanji_str]
+    random.shuffle(temp)
+    return "".join(temp)
+
+
 def get_config():
     # --- defaults ---
     colors = {
@@ -113,6 +119,7 @@ def get_config():
                "right": 0}
 
     screen_size = {"width": 1920, "height": 1080}
+    # screen_size = {"width": 800, "height": 600}
     # ---
 
     parser = ArgumentParser(description='WK wallpeaper config')
@@ -140,8 +147,11 @@ def main():
     api_key = config["api_key"]
     file_out_path = config["out_path"]
 
+    random.seed(1)
+
     # load kanji list
     all_kanji = load_kanji_set("./kanji_order.txt")
+    all_kanji = shuffle_kanji_order(all_kanji)
     count = len(all_kanji)
 
     # get assignments data from api
