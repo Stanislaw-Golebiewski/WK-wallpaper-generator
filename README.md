@@ -38,13 +38,13 @@ pipenv run python main.py --api-key abcdefgh-1234 --file-out ~/Pictures/WK-wallp
 
 #### TO DO:
 
-[] - add leftovers mods; center or shrink
-[] - configurable size (basic width and height)
-[] - configurable colors
-[] - configurable font
-[] - configurable kanji list
-[] - configurable kanji order
-[] - configurable seed for random shuffle
+* [ ] - add leftovers mods; center or shrink
+* [ ] - configurable size (basic width and height)
+* [ ] - configurable colors
+* [ ] - configurable font
+* [ ] - configurable kanji list
+* [ ] - configurable kanji order
+* [ ] - configurable seed for random shuffle
 
 
 
