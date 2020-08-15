@@ -10,15 +10,15 @@ Generate wallpeaper filled with colorfull kanji signs, based on your progress on
 
 #### Installation
 
-With `virtualenv`:
+I recommend to use [virtualenv](https://www.pythonforbeginners.com/basics/how-to-use-python-virtualenv):
 ```
 > virtualenv venv
-> source venv/bin/activate
-> pip install -r requirements
+> source ./venv/bin/activate
+> pip install -r requirements.txt
 ```
-or just
+But one can just do this:
 ```
-pip install -r requirements
+pip install -r requirements.txt
 ```
 
 #### Basic usage
