@@ -2,7 +2,17 @@
 
 Generate wallpeaper filled with colorfull kanji signs, based on your progress on [WaniKani](https://www.wanikani.com/) platform!
 
-![Example](/examples/big.png "Example of generated wallpaper")
+<p align="center">
+  <img alt="img-name" src="/examples/2.png" width="300">
+  <br>
+    <em>WaniKanie kanji order</em>
+</p>
+
+<p align="center">
+  <img alt="img-name" src="/examples/1.png" width="300">
+  <br>
+    <em>Random kanji order</em>
+</p>
 
 #### Requirements
 
