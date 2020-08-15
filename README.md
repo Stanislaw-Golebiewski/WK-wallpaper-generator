@@ -3,15 +3,9 @@
 Generate wallpeaper filled with colorfull kanji signs, based on your progress on [WaniKani](https://www.wanikani.com/) platform!
 
 <p align="center">
-  <img alt="img-name" src="/examples/2.png" width="300">
-  <br>
-    <em>WaniKani kanji order</em>
-</p>
-
-<p align="center">
   <img alt="img-name" src="/examples/1.png" width="300">
   <br>
-    <em>Random kanji order</em>
+    <em>Thats how it looks like on my lvl 9 (out of 60!) account ;)</em>
 </p>
 
 #### Requirements
