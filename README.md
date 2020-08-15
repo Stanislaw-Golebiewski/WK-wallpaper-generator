@@ -7,46 +7,30 @@ Generate wallpeaper filled with colorfull kanji signs, based on your progress on
 #### Requirements
 
 * python 3.6 <=
-* [pipenv](https://pypi.org/project/pipenv/)
 
 #### Installation
 
+With `virtualenv`:
 ```
-pipenv install
+> virtualenv venv
+> source venv/bin/activate
+> pip install -r requirements
+```
+or just
+```
+pip install -r requirements
 ```
 
 #### Basic usage
 
 ```
-pipenv run python main.py --api-key <your api key> --file-out <path to out .bmp file>
+> mv example.config.ini config.ini
+> (here add your api-key to config.ini)
+> python cli.py 
 ```
 
-##### Available configuration flags
+##### Available configuration cli options
 
-| argument     | required? | default | description          |
-|--------------|-----------|---------|----------------------|
-| `--api-key`  | **yes**   | -       | WaniKani API key     |
-| `--out-path` | **yes**   | -       | Where to put result? |
-
-
-
-
-#### Examples
-
-```
-pipenv run python main.py --api-key abcdefgh-1234 --file-out ~/Pictures/WK-wallpeapers/out.bmp
-```
-
-#### TO DO:
-
-* [ ] - add leftovers mods; center or shrink
-* [ ] - configurable size (basic width and height)
-* [ ] - configurable colors
-* [ ] - configurable font
-* [ ] - configurable kanji list
-* [ ] - configurable kanji order
-* [ ] - configurable seed for random shuffle
-
-
-
-
+| argument   | required? | default      | description         |
+|------------|-----------|--------------|---------------------|
+| `--config` | **no**    | _config.ini_ | path to config file |
