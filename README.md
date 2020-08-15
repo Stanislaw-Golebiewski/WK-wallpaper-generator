@@ -5,7 +5,7 @@ Generate wallpeaper filled with colorfull kanji signs, based on your progress on
 <p align="center">
   <img alt="img-name" src="/examples/2.png" width="300">
   <br>
-    <em>WaniKanie kanji order</em>
+    <em>WaniKani kanji order</em>
 </p>
 
 <p align="center">
