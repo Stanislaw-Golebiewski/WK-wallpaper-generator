@@ -1,4 +1,4 @@
-# import hashlib
+ # import hashlib
 import logging
 import math
 import os
@@ -30,6 +30,8 @@ Screen = Tuple[int, int]
 
 # 'wk_order' | 'random'
 KanjiOrder = NewType('KanjiOrder', Union['wk_order', 'random'])
+
+DEFAULT_FONT_DIR = os.path.join(os.path.dirname(__file__), 'fonts')
 
 
 class Config(TypedDict):
@@ -90,7 +92,7 @@ class WallpaperFactory:
             x = m_left
             for col in range(no_cols):
                 id, kanji_char, _ = kanji_ordered[counter]
-                color = self.colors[progress[id]]
+                color = self.colors[str(progress[id])]
                 # d.rectangle([x, y, x+square_size, y+square_size], fill=(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)))
                 d.text((x, y), kanji_char, font=font, fill=color)
                 x += square_size
@@ -123,7 +125,7 @@ class WallpaperFactory:
         return kanji_list
 
     def _get_font(self, name: str, size: int) -> ImageFont:
-        return ImageFont.truetype(f'./fonts/{name}.ttf', size)
+        return ImageFont.truetype(f'{DEFAULT_FONT_DIR}/{name}.ttf', size)
 
     def _calc_rect_size(self, no_symbols: int) -> Tuple[int, int, int]:
         # get width and height of final area where we can draw rectangles with kanji
@@ -151,7 +153,7 @@ class WallpaperFactory:
         kanji_dict: Dict[int, Tuple[str, int]] = {}
 
         # kanji_id: kanji_level
-        progress_dict: Dict[int, str] = {}
+        progress_dict: Dict[int, int] = {}
         headers = {'Wanikani-Revision': '20170710',
                    'Authorization': f"Bearer {self.api_key}"}
 
@@ -180,8 +182,8 @@ class WallpaperFactory:
             response_body = response.json()
             next_url = response_body['pages']['next_url']
             for asg in response_body['data']:
-                stage_name = asg['data']['srs_stage_name']
+                stage_name = asg['data']['srs_stage']
                 kanji_id = asg['data']['subject_id']
-                progress_dict[kanji_id] = stage_name.lower()
+                progress_dict[kanji_id] = stage_name
 
         return kanji_dict, progress_dict
